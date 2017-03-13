@@ -54,6 +54,8 @@ class JournalListViewController: UITableViewController {
 
       let childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
       childContext.parent = coreDataStack.mainContext
+      
+      let childEntry = childContext.object(with: surfJournalEntry.objectID) as? JournalEntry
 
     } else if segue.identifier == "SegueListToDetailAdd" {
 

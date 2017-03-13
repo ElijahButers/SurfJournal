@@ -56,6 +56,10 @@ class JournalListViewController: UITableViewController {
       childContext.parent = coreDataStack.mainContext
       
       let childEntry = childContext.object(with: surfJournalEntry.objectID) as? JournalEntry
+      
+      detailViewController.journalEntry = childEntry
+      detailViewController.context = childContext
+      detailViewController.delegate = self
 
     } else if segue.identifier == "SegueListToDetailAdd" {
 
